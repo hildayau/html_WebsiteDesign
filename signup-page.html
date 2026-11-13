@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>WebDesign Pratice</title>
+    <script src="./jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./StyleSheet/signup-page.css">
+    <link rel="stylesheet" type="text/css" href="./StyleSheet/guide-button.css">
+    <script>
+      function showmenu() {
+        var x = document.getElementById("div");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+      
+      $(function() {
+        $('#menu-pic').on('click',function(){
+          showmenu();
+        })
+      });
+    </script>
+  </head>
+  <body>
+  <header>
+    <button id="menu-pic"><img class="menu-pic" src="./Source/menu-pic.png"></button>
+    <button style="float: right;"><a href="./home-page.html"><img class="home-pic" style="padding-bottom:6.5px;" src="./Source/home-pic.png"></a></button>
+    <tp-yt-app-drawer id="div" align="start" role="navigation" class="style-scope ytd-app" style="transition-duration: 0ms; touch-action: pan-y; display:none;" position="left" swipe-open="" opened="" persistent="">
+      <nav>
+        <ul style="padding-left: 10px;">
+          <li><a href="home-page.html">ホームページ</a></li>
+          <li><a href="messageboard-page.html">メッセージボード</a></li>
+          <li class="has-child"><a href="#">メンバー</a>
+            <ul>
+            <li><a href="login-page.html">メンバーログイン</a></li>
+            <li><a href="signup-page.html">メンバーになる</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </tp-yt-app-drawer>
+    <div id="background-area">
+      <img id="background-image" src="./Source/newmem-background.webp">
+    </div>
+  </header>
+    <center>
+      <div class="container">
+        <h1>新規会員登録</h1>
+        <form>
+            <h3>基本情報</h3>
+            <table>
+              <tr>
+                <td><img class="profile-pic" src="./Source/default-propic.webp"></td>
+                <td class="pic-file"><input type="file"><br>プロフィールの写真を選択してください</td>
+              </tr>
+              <tr></tr>
+              <tr class="test">
+                <td>性別</td>
+                <td>
+                  <label>男性</label><input type="radio">
+                  <label>女性</label><input type="radio">
+                  <label>その他</label><input type="radio">
+                </td>
+              </tr>
+              <tr>
+                <td>誕生日</td>
+                <td><input type="date" name="Birth"></td>
+              </tr>
+              <tr><td>郵便番号<span>必須</span></td>
+                  <td><input type="text" name="PostCode"></td>
+              </tr>
+              <tr><td>メールアドレス<span>必須</span></td>
+                <td><input type="text" name="EmailAddress" placeholder="例：fighting@gmail.com"</td>
+              </tr>
+              <tr><td>パスワード<span>必須</span></td>
+                <td><input type="text" name="Password"></td>
+              </tr>
+            </table>
+            <br/>
+            <p align="center"><input type="submit" value="　会員登録する　"></p>
+        </form>
+      </div>
+    </center>
+    <footer>
+        <p>©&nbsp;copyright.</p>
+    </footer>
+  </body>
+</html>

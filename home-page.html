@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>WebDesign Pratice</title>
+        <script src="./jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="./StyleSheet/home-page(net-source).css">
+        <link rel="stylesheet" type="text/css" href="./StyleSheet/guide-button.css">
+        <script>
+        function showmenu() {
+            var x = document.getElementById("div");
+            if (x.style.display === "none") {
+            x.style.display = "block";
+            } else {
+            x.style.display = "none";
+            }
+        }
+
+        $(function() {
+            $('#menu-pic').on('click',function(){
+                showmenu();
+            })
+        });
+        </script>
+        <style>
+            #center-button{
+                text-align: center;
+            }
+            footer{
+                justify-content: last baseline;
+                margin-top: 50px;
+                padding: 5px;
+                font-size: smaller;
+                color: white;
+                position: absolute;
+             }
+            pre{
+                font-size: large;
+                writing-mode: vertical-rl;
+                text-orientation: upright;
+            }
+            button{
+                cursor: pointer;
+                font-size: medium;
+                border: none;
+                color: white;
+                background: none;
+                text-align: center;
+                margin: 20px auto auto; 
+            }
+            .menu-button .home-button{
+                background:none;
+                border: none;
+                height: 40px;
+                width: 50px;
+                cursor: pointer;
+                margin-bottom: 20px;
+            }
+            .menu-pic{
+                height: 40px;
+                width: 37px;
+                opacity: 0.5;
+            }
+            .home-pic{
+                height: 33px;
+                width: 35px;
+                opacity: 0.7;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="menu-pic"><img class="menu-pic" src="./Source/menu-pic.png"></button>
+        <button class="home-button" style="float: right;"><a href="./home-page.html"><img class="home-pic" style="padding-bottom:6.5px;" src="./Source/home-pic.png"></a></button>
+        <tp-yt-app-drawer id="div" align="start" role="navigation" class="style-scope ytd-app" style="transition-duration: 0ms; touch-action: pan-y; display:none;" position="left" swipe-open="" opened="" persistent="">
+            <nav>
+            <ul style="padding-left: 10px;">
+              <li><a href="home-page.html">ホームページ</a></li>
+              <li><a href="messageboard-page.html">メッセージボード</a></li>
+              <li class="has-child"><a href="#">メンバー</a>
+                <ul>
+                <li><a href="login-page.html">メンバーログイン</a></li>
+                <li><a href="signup-page.html">メンバーになる</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </tp-yt-app-drawer>
+        <header id="header">
+            <h1>
+                <pre>
+                        「こんにちは、<br>
+                        ようこそ」<br>
+                </pre>
+            </h1> 
+            <div id="video-area">
+                <video id="video" webkit-playsinline playsinline muted autoplay loop>
+                <source src="./Source/background_movie.mp4" type="video/mp4">
+                </video>
+            </div>
+        </header>
+        <div id="center-button">
+            <button>
+                <a href="./messageboard-page.html" target="link">ページに入る</a> 
+            </button>
+            &emsp;&emsp;
+            <button>
+                <a href="./login-page.html" target="link">ログイン</a>
+            </button>
+            <br>
+            <button>
+                <a href="./signup-page.html" target="link">会員登録</a>
+            </button>
+        </div>           
+        <footer>
+            <p>©&nbsp;copyright.</p>
+        </footer>
+        <audio controls autoplay loop style="display:none">
+            <source src="./Source/background_music.mp3" type="audio/mpeg">
+        </audio>
+    </body>
+</html>

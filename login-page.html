@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>WebDesign Pratice</title>
+    <script src="./jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./StyleSheet/login-page.css">
+    <link rel="stylesheet" type="text/css" href="./StyleSheet/guide-button.css">
+    <script>
+      function showmenu() {
+        var x = document.getElementById("div");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+      
+      $(function() {
+        $('#menu-pic').on('click',function(){
+          showmenu();
+        })
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="bk-img-container">
+        <img class="background-image" src="https://i.pinimg.com/originals/2c/f0/cc/2cf0cce180d665e275d8fe5b05e61dd9.jpg">
+      </div>
+      <button id="menu-pic"><img class="menu-pic" src="./Source/menu-pic.png"></button>
+      <button style="float: right;"><a href="./home-page.html"><img class="home-pic" style="padding-bottom:6.5px;" src="./Source/home-pic.png"></a></button>
+      <tp-yt-app-drawer id="div" align="start" role="navigation" class="style-scope ytd-app" style="transition-duration: 0ms; touch-action: pan-y; display:none;" position="left" swipe-open="" opened="" persistent="">
+        <nav>
+          <ul style="padding-left: 10px;">
+            <li><a href="home-page.html">ホームページ</a></li>
+            <li><a href="messageboard-page.html">メッセージボード</a></li>
+            <li class="has-child"><a href="#">メンバー</a>
+              <ul>
+              <li><a href="login-page.html">メンバーログイン</a></li>
+              <li><a href="signup-page.html">メンバーになる</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </tp-yt-app-drawer>
+    </header>
+    <div class="container">
+      <form >
+        <table >
+          <h2 style="color: #444444;">メンバーログイン</h2>
+          <tr><td><input type="text" placeholder="メールアドレス"></td></tr>
+          <tr><td><br/><input type="password" placeholder="パスワード"></td></tr>
+        </table>
+        <br/>
+        <input class="submit" type="submit" value="ログインする">
+      </form>
+    </div>
+    <footer>
+      <p>©&nbsp;copyright.</p>
+    </footer>
+  </body>
+</html>

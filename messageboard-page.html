@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>WebDesign Pratice</title>
+    <script src="./jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./StyleSheet/login-page.css">
+    <link rel="stylesheet" type="text/css" href="./StyleSheet/guide-button.css">
+    <script>
+      function showmenu() {
+        var x = document.getElementById("div");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+
+      function send(){
+        var message = $('#msend').val();
+        $('#m1').text(message);
+      }
+      
+      $(function() {
+        $('#send').on('click',function(){
+            send();
+        })
+        $('#menu-pic').on('click',function(){
+          showmenu();
+        })
+      });
+    </script>
+
+    <style>
+      textarea {
+          margin: auto;
+          margin-left: 10px;
+          max-width: 100%;
+          line-height: 1.5;
+          border-radius: 5px;
+          border: 1px solid #ccc;
+      }
+      .send{
+        height: 40px;
+        color: white;
+        background-color: rgb(121, 172, 206);
+        border: none;
+        border-radius: 8px;
+        margin: 20px auto 0;
+        padding: 5px 10px 5px;
+        cursor: pointer;
+      }
+      .container{
+        padding-bottom: 10px;
+      }
+    </style>
+
+  </head>
+  <body style="color: white;">
+    <header>
+      <div class="bk-img-container">
+        <img class="background-image" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2VhJTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&w=1000&q=80">
+      </div>
+      <button id="menu-pic"><img class="menu-pic" src="./Source/menu-pic.png"></button>
+      <button style="float: right;"><a href="./home-page.html"><img class="home-pic" style="padding-bottom:6.5px;" src="./Source/home-pic.png"></a></button>
+      
+      <tp-yt-app-drawer id="div" align="start" role="navigation" class="style-scope ytd-app" style="transition-duration: 0ms; touch-action: pan-y; display:none;" position="left" swipe-open="" opened="" persistent="">
+          <nav>
+          <ul style="padding-left: 10px;">
+            <li><a href="home-page.html">ホームページ</a></li>
+            <li><a href="messageboard-page.html">メッセージボード</a></li>
+            <li class="has-child"><a href="#">メンバー</a>
+              <ul>
+              <li><a href="login-page.html">メンバーログイン</a></li>
+              <li><a href="signup-page.html">メンバーになる</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </tp-yt-app-drawer>
+
+    </header>
+
+    <h1 style="color: white; text-align:center;">メッセージボード</h1>
+    <div class="container">
+      <form>
+        <textarea id="msend" rows="3" cols="50" placeholder="一言を入れてください。"></textarea>
+        <br><input id="send" class="send" type="button" value="確認する">
+      </form>
+    </div>
+    <br><br><br>
+    <marquee id="m1"></marquee>
+    <marquee id="m2" behavior="alternate"></marquee>
+    <marquee id="m3" direction="right"></marquee>
+    <footer>
+      <p>©&nbsp;copyright.</p>
+    </footer>
+    <audio controls autoplay loop style="display:none">
+      <source src="./Source/background_music.mp3" type="audio/mpeg">
+    </audio>
+  </body>
+</html>
